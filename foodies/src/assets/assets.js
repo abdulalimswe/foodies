@@ -41,7 +41,7 @@ export const categories = [
     },
     {
         id: 6,
-        name: 'Ice Cream',
+        name: 'IceCream',
         image: IceCream,
     },
 ];
