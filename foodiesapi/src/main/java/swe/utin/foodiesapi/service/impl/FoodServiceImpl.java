@@ -1,4 +1,4 @@
-package swe.utin.foodiesapi.service;
+package swe.utin.foodiesapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +16,7 @@ import swe.utin.foodiesapi.Entity.FoodEntity;
 import swe.utin.foodiesapi.io.FoodRequest;
 import swe.utin.foodiesapi.io.FoodResponse;
 import swe.utin.foodiesapi.repository.FoodRepository;
+import swe.utin.foodiesapi.service.FoodService;
 
 import java.io.IOException;
 import java.util.List;
