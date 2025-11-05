@@ -9,4 +9,6 @@ public interface CartService {
     CartResponse getCart();
 
     void clearCart();
+
+    CartResponse removeFromCart(CartRequest request);
 }
