@@ -41,7 +41,9 @@ export const StoreContextProvider = (props) => {
         quantities,
         removeFromCart,
         token,
-        setToken
+        setToken,
+        setQuantities,
+        loadCartData
     };
 
 

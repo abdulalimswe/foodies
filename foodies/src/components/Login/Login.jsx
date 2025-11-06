@@ -9,7 +9,7 @@ import {StoreContext} from "../../context/StoreContext.jsx";
 const Login = () => {
     const navigate = useNavigate();
 
-    const {setToken} = useContext(StoreContext);
+    const {setToken, loadCartData} = useContext(StoreContext);
 
     const [data, setData] = React.useState({
         email: "",
@@ -26,12 +26,12 @@ const Login = () => {
 
     const onSubmitHandler = async (event) => {
         event.preventDefault();
-        
         try{
             const res = await loginUser(data);
             if(res.status === 200){
                 setToken(res.data.token);
                 localStorage.setItem("token", res.data.token);
+                await loadCartData(res.data.token);
                 navigate("/");
                 toast.success("Login Successful.");
             } else{
