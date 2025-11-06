@@ -6,11 +6,13 @@ import Cake from './cake.jpeg';
 import Pizza from './pizza.jpeg';
 import Salad from './salad.jpeg';
 import IceCream from './IceCream.jpg';
+import Profile from './profile.png';
 
 
 export const assets = {
     logo,
     cart,
+    Profile
 };
 
 export const categories = [

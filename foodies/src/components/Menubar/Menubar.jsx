@@ -8,9 +8,15 @@ import {StoreContext} from "../../context/StoreContext.jsx";
 
 const Menubar = () => {
     const [active, setActive] = useState('');
-    const {quantities} = useContext(StoreContext);
+    const {quantities, token,setToken} = useContext(StoreContext);
     const uniqueItemsInCart = Object.values(quantities).filter(qty => qty > 0).length;
     const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem('token');
+        setToken("");
+        navigate("/");
+    }
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container">
@@ -40,8 +46,24 @@ const Menubar = () => {
                                 </div>
                             </Link>
                         </div>
-                        <button className='btn btn-outline-primary' onClick={ () => navigate('/login')}>Login</button>
-                        <button className='btn btn-outline-success' onClick={ () => navigate('/register')}>Register</button>
+                        {
+                            !token ? (
+                                <>
+                                    <button className='btn btn-outline-primary' onClick={ () => navigate('/login')}>Login</button>
+                                    <button className='btn btn-outline-success' onClick={ () => navigate('/register')}>Register</button>
+                                </> ) : (
+                                <div className='dropdown text-end'>
+                                    <a href='#!' className='d-block link-dark text-decoration-none dropdown-toggle' data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src={assets.Profile} alt="" width="32" height="32" className="rounded-circle"/>
+                                    </a>
+                                    <ul className="dropdown-menu text-small ">
+                                        <li  className="dropdown-item" onClick={ () => navigate('/myorders')} >Orders</li>
+                                        <li><hr className="dropdown-divider"/></li>
+                                        <li className="dropdown-item" onClick={logout} >Sign Out?</li>
+                                    </ul>
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>
