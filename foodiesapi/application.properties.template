@@ -1,0 +1,94 @@
+# Foodies API - Application Configuration Template
+# Copy this file to application.properties and fill in your actual values
+# IMPORTANT: Never commit application.properties with real credentials to git
+
+spring.application.name=foodiesapi
+
+# ================================
+# DATABASE CONFIGURATION
+# ================================
+# MongoDB Configuration
+# Local Development:
+spring.data.mongodb.uri=mongodb://localhost:27017/foodies
+
+# Production (use environment variable):
+# spring.data.mongodb.uri=${MONGODB_URI}
+# Example: mongodb+srv://username:password@cluster.mongodb.net/foodies?retryWrites=true&w=majority
+
+# ================================
+# AWS S3 CONFIGURATION
+# ================================
+# Required for food image uploads
+aws.access.key=${AWS_ACCESS_KEY:your-aws-access-key}
+aws.secret.key=${AWS_SECRET_KEY:your-aws-secret-key}
+aws.region=${AWS_REGION:us-east-1}
+aws.s3.bucket.name=${AWS_S3_BUCKET:your-bucket-name}
+
+# ================================
+# JWT SECURITY CONFIGURATION
+# ================================
+# Generate a strong secret key (minimum 256 bits)
+# You can generate one using: openssl rand -base64 64
+jwt.secret.key=${JWT_SECRET_KEY:CHANGE-THIS-TO-A-SECURE-RANDOM-STRING-MINIMUM-256-BITS}
+jwt.expiration.time=${JWT_EXPIRATION_TIME:86400000}
+
+# ================================
+# RAZORPAY CONFIGURATION
+# ================================
+# For international payments
+# Get credentials from: https://dashboard.razorpay.com/
+payment_key=${RAZORPAY_KEY_ID:your-razorpay-key-id}
+payment_secret_key=${RAZORPAY_KEY_SECRET:your-razorpay-key-secret}
+
+# ================================
+# SSLCOMMERZ CONFIGURATION
+# ================================
+# For Bangladesh payments (bKash, Rocket, Nagad, Cards)
+# Get credentials from: https://sslcommerz.com/
+
+# Store Credentials
+sslcommerz.store.id=${SSLCOMMERZ_STORE_ID:your-store-id}
+sslcommerz.store.password=${SSLCOMMERZ_STORE_PASSWORD:your-store-password}
+
+# API URLs
+# SANDBOX (for testing):
+sslcommerz.api.url=https://sandbox.sslcommerz.com/gwprocess/v4/api.php
+sslcommerz.validation.url=https://sandbox.sslcommerz.com/validator/api/validationserverAPI.php
+
+# PRODUCTION (uncomment when going live):
+#sslcommerz.api.url=https://securepay.sslcommerz.com/gwprocess/v4/api.php
+#sslcommerz.validation.url=https://securepay.sslcommerz.com/validator/api/validationserverAPI.php
+
+# Callback URLs (update with your actual domain)
+# For local development:
+sslcommerz.success.url=${APP_URL:http://localhost:8080}/api/payment/sslcommerz/success
+sslcommerz.fail.url=${APP_URL:http://localhost:8080}/api/payment/sslcommerz/fail
+sslcommerz.cancel.url=${APP_URL:http://localhost:8080}/api/payment/sslcommerz/cancel
+sslcommerz.ipn.url=${APP_URL:http://localhost:8080}/api/payment/sslcommerz/ipn
+
+# For production, set APP_URL environment variable:
+# APP_URL=https://yourdomain.com
+
+# ================================
+# SERVER CONFIGURATION
+# ================================
+server.port=${PORT:8080}
+
+# ================================
+# LOGGING CONFIGURATION
+# ================================
+# Adjust log levels as needed
+logging.level.root=INFO
+logging.level.swe.utin.foodiesapi=DEBUG
+logging.level.org.springframework.security=INFO
+logging.level.org.springframework.web=INFO
+
+# ================================
+# PRODUCTION SECURITY SETTINGS
+# ================================
+# Uncomment these for production deployment:
+# server.ssl.enabled=true
+# server.ssl.key-store=classpath:keystore.p12
+# server.ssl.key-store-password=${SSL_KEYSTORE_PASSWORD}
+# server.ssl.key-store-type=PKCS12
+# server.ssl.key-alias=tomcat

@@ -1,10 +1,23 @@
-HELP.md
+### Build artifacts ###
 target/
-.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
 
-### STS ###
+### IDE ###
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
 .apt_generated
 .classpath
 .factorypath
@@ -12,64 +25,129 @@ target/
 .settings
 .springBeans
 .sts4-cache
+bin/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# VS Code
 .vscode/
-### Java ###
-*.class
-*.jar
-*.war
-*.ear
-*.log
 
 ### Maven ###
-/target/
+.mvn/
+mvnw
+mvnw.cmd
 
 ### Gradle ###
 .gradle/
 /build/
-/out/
 !gradle/wrapper/gradle-wrapper.jar
 
-### IntelliJ IDEA ###
-.idea/
-out/
+### Logs ###
+*.log
+/logs/
+*.log.*
+*.gz
 
-### Eclipse ###
-.settings/
-bin/
-
-
-### Mac/Linux/Windows ###
+### OS ###
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+*~
 
 ### Spring Boot ###
-/logs/
 /tmp/
-/*.pid
-*.seed
 *.pid
+*.seed
 *.swp
+spring-boot-*.log
 
-### AWS or sensitive configs ###
-application-*.yml
-application-*.yaml
-application-*.properties
+### Security & Credentials ###
+# Environment files
 *.env
+.env
+.env.local
+.env.*.local
+
+# Application configs with secrets
+application.properties
+application-dev.properties
+application-dev.yml
+application-dev.yaml
+application-prod.properties
+application-prod.yml
+application-prod.yaml
+application-local.properties
+application-local.yml
+application-local.yaml
+src/main/resources/application.properties
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
+src/main/resources/application-*.yaml
+
+# Keep only template
+!application.properties.template
+
+# AWS credentials
+.aws/
+aws-credentials.properties
+credentials.json
+
+# Payment Gateway Credentials
+sslcommerz-config.json
+razorpay-config.json
+payment-secrets.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Keys & Certificates
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+*.pfx
+*.cer
+*.crt
+
+### Documentation (keeping only README) ###
+HELP.md
+CHECKLIST.md
+CHANGES_LOG.md
+IMPLEMENTATION_SUMMARY.md
+INDEX.md
+PAYMENT_INTEGRATION.md
+PAYMENT_README.md
+QUICKSTART_PAYMENT.md
+
+### Testing ###
+coverage/
+.nyc_output/
+*.test.log
+
+### Package Files ###
+node_modules/
+package-lock.json
+yarn.lock
+
+### Backup files ###
+*.bak
+*.backup
+*.swp
+*.swo
+*~.nib
+
+### Postman Collections (optional - uncomment to ignore) ###
+# *.postman_collection.json
+# *.postman_environment.json

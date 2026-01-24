@@ -1,0 +1,167 @@
+{
+  "info": {
+    "name": "Foodies API - Payment Gateway",
+    "_postman_id": "foodies-payment-collection",
+    "description": "API collection for testing payment gateway integration (bKash, Rocket, Nagad, Cards)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order - bKash Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderedItems\": [\n    {\n      \"foodId\": \"food123\",\n      \"foodName\": \"Chicken Burger\",\n      \"quantity\": 2,\n      \"price\": 350\n    },\n    {\n      \"foodId\": \"food124\",\n      \"foodName\": \"French Fries\",\n      \"quantity\": 1,\n      \"price\": 150\n    }\n  ],\n  \"userAddress\": \"House 23, Road 5, Dhanmondi, Dhaka-1205\",\n  \"amount\": 850,\n  \"phoneNumber\": \"01712345678\",\n  \"email\": \"customer@example.com\",\n  \"customerName\": \"Ahmed Hassan\",\n  \"paymentGateway\": \"SSLCOMMERZ\",\n  \"paymentMethod\": \"bkash\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/orders/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "orders", "create"]
+            },
+            "description": "Create an order with bKash payment method"
+          }
+        },
+        {
+          "name": "Create Order - Rocket Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderedItems\": [\n    {\n      \"foodId\": \"food125\",\n      \"foodName\": \"Pizza\",\n      \"quantity\": 1,\n      \"price\": 1250\n    }\n  ],\n  \"userAddress\": \"Bashundhara R/A, Dhaka\",\n  \"amount\": 1250,\n  \"phoneNumber\": \"01812345678\",\n  \"email\": \"customer2@example.com\",\n  \"customerName\": \"Fatima Rahman\",\n  \"paymentGateway\": \"SSLCOMMERZ\",\n  \"paymentMethod\": \"rocket\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/orders/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "orders", "create"]
+            },
+            "description": "Create an order with Rocket payment method"
+          }
+        },
+        {
+          "name": "Create Order - Nagad Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderedItems\": [\n    {\n      \"foodId\": \"food126\",\n      \"foodName\": \"Biryani\",\n      \"quantity\": 2,\n      \"price\": 475\n    }\n  ],\n  \"userAddress\": \"Uttara, Dhaka\",\n  \"amount\": 950,\n  \"phoneNumber\": \"01912345678\",\n  \"email\": \"customer3@example.com\",\n  \"customerName\": \"Karim Ahmed\",\n  \"paymentGateway\": \"SSLCOMMERZ\",\n  \"paymentMethod\": \"nagad\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/orders/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "orders", "create"]
+            },
+            "description": "Create an order with Nagad payment method"
+          }
+        },
+        {
+          "name": "Create Order - Card Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderedItems\": [\n    {\n      \"foodId\": \"food127\",\n      \"foodName\": \"Combo Meal\",\n      \"quantity\": 2,\n      \"price\": 1250\n    }\n  ],\n  \"userAddress\": \"Gulshan, Dhaka\",\n  \"amount\": 2500,\n  \"phoneNumber\": \"01612345678\",\n  \"email\": \"customer4@example.com\",\n  \"customerName\": \"Rahim Khan\",\n  \"paymentGateway\": \"SSLCOMMERZ\",\n  \"paymentMethod\": \"card\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/orders/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "orders", "create"]
+            },
+            "description": "Create an order with Card payment (Visa/Mastercard)"
+          }
+        },
+        {
+          "name": "Create Order - Cash on Delivery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderedItems\": [\n    {\n      \"foodId\": \"food128\",\n      \"foodName\": \"Sandwich\",\n      \"quantity\": 3,\n      \"price\": 250\n    }\n  ],\n  \"userAddress\": \"Mirpur, Dhaka\",\n  \"amount\": 750,\n  \"phoneNumber\": \"01512345678\",\n  \"email\": \"customer5@example.com\",\n  \"customerName\": \"Nusrat Jahan\",\n  \"paymentGateway\": \"COD\",\n  \"paymentMethod\": \"cod\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/orders/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "orders", "create"]
+            },
+            "description": "Create an order with Cash on Delivery"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "item": [
+        {
+          "name": "Validate Payment",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/payment/validate/{{transactionId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "payment", "validate", "{{transactionId}}"]
+            },
+            "description": "Validate payment status by transaction ID"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "transactionId",
+      "value": "FOOD-a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "type": "string"
+    }
+  ]
+}

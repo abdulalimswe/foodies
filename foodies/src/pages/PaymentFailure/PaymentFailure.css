@@ -1,0 +1,57 @@
+.payment-failure-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.payment-failure-card {
+    border: none;
+    border-radius: 15px;
+}
+
+.failure-icon {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+.failure-details {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.common-reasons {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.common-reasons ul li {
+    padding: 0.5rem 0;
+}
+
+.payment-actions {
+    margin-top: 2rem;
+}
+
+.payment-actions .btn {
+    margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .payment-actions .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

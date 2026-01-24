@@ -1,0 +1,52 @@
+.payment-cancel-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.payment-cancel-card {
+    border: none;
+    border-radius: 15px;
+}
+
+.cancel-icon {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cancel-details {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.info-message {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-actions {
+    margin-top: 2rem;
+}
+
+.payment-actions .btn {
+    margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .payment-actions .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

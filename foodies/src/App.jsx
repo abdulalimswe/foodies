@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Menubar from './components/Menubar/Menubar';
 
 import { Routes, Route } from 'react-router-dom';
@@ -10,6 +10,9 @@ import Cart from "./pages/Cart/Cart.jsx";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
+import PaymentSuccess from "./pages/PaymentSuccess/PaymentSuccess.jsx";
+import PaymentFailure from "./pages/PaymentFailure/PaymentFailure.jsx";
+import PaymentCancel from "./pages/PaymentCancel/PaymentCancel.jsx";
 import {ToastContainer} from "react-toastify";
 
 
@@ -27,6 +30,9 @@ const App = () => {
               <Route path='/order' element={<PlaceOrder />} />
               <Route path='/login' element={<Login/>}/>
               <Route path='/register' element={<Register/>}/>
+              <Route path='/payment/success' element={<PaymentSuccess />} />
+              <Route path='/payment/failure' element={<PaymentFailure />} />
+              <Route path='/payment/cancel' element={<PaymentCancel />} />
           </Routes>
       </div>
     )
