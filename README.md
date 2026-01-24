@@ -769,10 +769,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 Need help? We're here for you!
 
-- 📧 **Email:** support@foodies.com
-- 🐛 **Issues:** [GitHub Issues](https://github.com/yourusername/foodies/issues)
+- 📧 **Email:** abdulalimswe@gmail.com
+- 🐛 **Issues:** [GitHub Issues](https://github.com/abdulalimswe/foodies/issues)
 - 📖 **Documentation:** Check individual README files in each directory
-- 💬 **Discord:** Join our community server
+- 💼 **LinkedIn:** Connect with the developer
 
 ---
 
@@ -806,7 +806,7 @@ Need help? We're here for you!
 
 ## 👨‍💻 Authors
 
-- **Your Name** - *Initial work* - [GitHub Profile](https://github.com/yourusername)
+- **Md Abdul Alim** - *Full Stack Developer* - [@abdulalimswe](https://github.com/abdulalimswe)
 
 ---
 
